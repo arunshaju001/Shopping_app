@@ -1,0 +1,20 @@
+{
+  "name": "assign_mod_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "dateformat": "^4.5.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.11.15",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

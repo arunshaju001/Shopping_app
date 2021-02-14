@@ -1,0 +1,60 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Order Management</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/styles.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+        <% if ( message=='Order Placed Successfully' ) { %>
+            <div class="alert alert-success" role="alert">
+                <center><%=message%></center>
+            </div>
+        <% } %>
+        <div class="container">
+                <div >
+                    <center>
+                        <h1><%=title%></h1>
+                    </center>
+                </div>
+                <hr/>
+                <div class="container">
+                    <h2>Enter Details</h2>
+                    <form action="/", method="POST">
+                      <div class="form-group">
+                        <label for="name">Name :</label><input required=true type="text" class="form-control" id="name" placeholder="Enter Name" name="name" >
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Address :</label><input required=true type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required=true>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="shopping_item">Select your Item:</label>
+                        <select class="form-select" aria-label="Default select example" name="order" id="order" required=true>
+                            <option selected>Watch</option>
+                            <option value="Watch">Watch</option>
+                            <option value="Phone">Phone</option>
+                            <option value="Laptop">Laptop</option>
+                          </select>
+                      </div>
+
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                  </div>
+
+        </div>
+    
+    </body>
+</html>

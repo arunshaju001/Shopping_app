@@ -1,0 +1,62 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Order Management</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/styles.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+	</head>
+	<body>
+        <div >
+            <center>
+                <h1>Order Status</h1>
+            </center>
+        </div>
+        <br><br>
+        <div class="container">
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Mail</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Item</th>
+                    <th>Ordered Date</th>
+                    <th>Status</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    <%if (formatedresult.length >0){ %>
+                        <% formatedresult.forEach(function(row){ %>
+                        <tr>
+                          <form action="/send" method="POST">
+                          <td ><input type="submit" name="send_button" value="Send Mail" /></td>
+                          <input type="hidden" value="<%=JSON.stringify(row)%>" name="email" />
+                        </form>
+                          <td><%= row.name %></td>
+                          <td><%= row.email %></td>
+                          <td><%= row.address %></td>
+                          <td><%= row.order %></td>
+                          <td><%= row.date %></td>
+                          <td><%= row.status %></td>
+                        </tr>
+                        <% })}else{ %>
+                          <tr>
+                              <td colspan="6">No Record Found</td>
+                              
+                            </tr>
+                          <% } %>
+                      </tbody>
+                    </table>
+        </div>
+    </body>
+</html>
